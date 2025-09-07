@@ -39,7 +39,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4" class="text-center text-muted">No users found</td>
+                                    <td colspan="6" class="text-center text-muted">No users found</td>
                                 </tr>
                             @endforelse
                         </tbody>

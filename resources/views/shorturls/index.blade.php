@@ -52,7 +52,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4" class="text-center text-muted">No shorturls found</td>
+                                    <td colspan="7" class="text-center text-muted">No shorturls found</td>
                                 </tr>
                             @endforelse
                         </tbody>
