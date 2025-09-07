@@ -21,6 +21,7 @@ class UserSeeder extends Seeder
             'user_role_id' => 1,
             'email_verified_at' => NULL,
             'created_by' => 0,
+            'company_id' => 0,
             'password' => Hash::make('password@123'),
         ]);
     }

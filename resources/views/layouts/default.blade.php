@@ -31,21 +31,21 @@
 				<div class="container mt-4">
 					<div class="row">
 						<div class="col-md-4">
-							<a href="{{route('shorturl.index')}}">Short URLs </a>
+							<a class="btn btn-primary" href="{{route('shorturl.index')}}">Short URLs </a>
 						</div>
 						
 						@if(Auth::user()->user_role_id ==  SUB_ADMIN_ROLE_ID)
 							<div class="col-md-4">
-								<a href="{{route('users.index')}}"> Members </a>
+								<a class="btn btn-primary" href="{{route('users.index')}}"> Members </a>
 							</div>
 						@elseif(in_array(Auth::user()->user_role_id, [SUPER_ADMIN_ROLE_ID, SUB_ADMIN_ROLE_ID]))
 							<div class="col-md-4">
-								<a href="{{route('users.index')}}">Sub Admins </a>
+								<a class="btn btn-primary" href="{{route('users.index')}}">Sub Admins </a>
 							</div>
 						@endif
 						
 						<div class="col-md-4">
-							<a href="{{route('logout')}}">Logout </a>
+							<a class="btn btn-primary" href="{{route('logout')}}">Logout </a>
 						</div>
 					</div>
 				</div>
