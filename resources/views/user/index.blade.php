@@ -20,6 +20,8 @@
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Email</th>
+                                <th>Company</th>
+                                <th>Company</th>
                                 <th class="text-end">Actions</th>
                             </tr>
                         </thead>
@@ -29,6 +31,8 @@
                                     <td>{{ $index + 1 }}</td>
                                     <td>{{ $user->name }}</td>
                                     <td>{{ $user->email }}</td>
+									<td>{{ Config::get('user_type.'.$user->user_role_id) }}</td>
+									<td>{{ $user->company->name }}</td>
                                     <td class="text-end">
                                          
                                     </td>

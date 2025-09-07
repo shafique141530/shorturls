@@ -4,10 +4,10 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <div class="container-fluid">
-            <a class="navbar-brand h1" href={{ route('shorturl.index') }}>Shorturls</a>
+            <a class="navbar-brand h1" href="javascript:void(0)">Update Shorturl</a>
             <div class="justify-end ">
                 <div class="col ">
-                    <a class="btn btn-sm btn-success" href={{ route('shorturl.create') }}>Add Shorturl</a>    
+                    <a class="btn btn-sm btn-success" href={{ route('shorturl.index') }}>Shorturl List</a>
                 </div>
             </div>
     </nav>

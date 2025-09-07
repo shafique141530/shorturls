@@ -38,7 +38,7 @@
 							<div class="col-md-4">
 								<a href="{{route('users.index')}}"> Members </a>
 							</div>
-						@elseif(Auth::user()->SUPER_ADMIN_ROLE_ID ==  SUB_ADMIN_ROLE_ID)
+						@elseif(in_array(Auth::user()->user_role_id, [SUPER_ADMIN_ROLE_ID, SUB_ADMIN_ROLE_ID]))
 							<div class="col-md-4">
 								<a href="{{route('users.index')}}">Sub Admins </a>
 							</div>

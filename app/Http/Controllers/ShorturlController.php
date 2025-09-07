@@ -29,7 +29,7 @@ class ShorturlController extends Controller
 			$shorturlsQuery->whereIn('created_by', $memberIds);
 		}
 		
-		$shorturls = $shorturlsQuery->get();
+		$shorturls = $shorturlsQuery->with(['user', 'company'])->get();
 		return view('shorturls.index', compact('shorturls'));
     }
 	
@@ -60,9 +60,13 @@ class ShorturlController extends Controller
 				->withErrors($validator)->withInput();
 		}
 		else{
+			
+			$companyId = Auth::user()->company_id;
+			
 			$model	= new Shorturl;
 			$model->long_url = isset($formData['long_url']) ? $formData['long_url'] : null;
 			$model->created_by = (Auth::check() && Auth::user()->id) ? Auth::user()->id : 0;
+			$model->company_id = $companyId;
 			$model->save();
 			
 			return redirect()->route('shorturl.index')->with('success','Shorturl created successfully.');

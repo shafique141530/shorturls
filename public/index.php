@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 define('SUPER_ADMIN_ROLE_ID', 1);
 define('SUB_ADMIN_ROLE_ID', 2);
 define('MEMBER_ROLE_ID', 3);
-
+define('PASSWORD_REGX', '/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/');
 
 
 

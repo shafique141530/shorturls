@@ -5,7 +5,7 @@
 @section('content')
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-10 offset-md-1">
+        <div class="col-md-12">
 
             <div class="card shadow-sm">
                 <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
@@ -22,6 +22,8 @@
                                 <th>#</th>
                                 <th>Long URL</th>
                                 <th>Short URL</th>
+                                <th>Created By</th>
+								<th>Company</th>
                                 <th>views</th>
                                 <th class="text-end">Actions</th>
                             </tr>
@@ -33,6 +35,14 @@
                                     <td>{{ $shorturl->long_url }}</td>
                                     <td><a href="{{ route('shorturl.hit', base64_encode($shorturl->id))  }}" target="_blank">{{ route('shorturl.hit', base64_encode($shorturl->id) )  }}</a></td>
                                     
+                                    <td>
+										@if(isset($shorturl->user) && isset($shorturl->user->name) && isset($shorturl->user->email))
+											{{ $shorturl->user->name }}<br/> {{ $shorturl->user->email }}
+										@else 
+											{{ 'N/A' }}
+										@endif
+									</td>
+									<td>{{ $shorturl->company->name }}</td>
                                     <td>{{ $shorturl->views }}</td>
 									<td class="text-end">
 									<a href="{{ route('shorturl.edit', $shorturl->id) }}" class="btn btn-light btn-sm">
